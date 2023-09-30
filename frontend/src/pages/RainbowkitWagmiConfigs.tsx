@@ -15,13 +15,15 @@ interface RainbowKitWagmiConfigsProps {
   children: React.ReactNode;
 }
 
-const alchemyApiKey = process.env.NEXT_SEPOLIA_API_KEY as string;
+// const alchemyApiKey = process.env.NEXT_SEPOLIA_API_KEY as string;
+
+const alchemyApiKey = process.env.NEXT_PUBLIC_SEPOLIA_API_KEY;
 
 const { chains, publicClient } = configureChains(
   [sepolia],
   [
     alchemyProvider({
-      apiKey: alchemyApiKey,
+      apiKey: alchemyApiKey as string,
     }),
     jsonRpcProvider({ rpc: () => ({ http: "https://rpc.ankr.com/gnosis" }) }),
     publicProvider(),
@@ -29,7 +31,7 @@ const { chains, publicClient } = configureChains(
 );
 
 const { connectors } = getDefaultWallets({
-  appName: "Color Board",
+  appName: "DxBlog",
   projectId: "01",
   chains,
 });
@@ -47,8 +49,8 @@ const RainbowKitWagmiConfigs: React.FC<RainbowKitWagmiConfigsProps> = ({
       <RainbowKitProvider
         chains={chains}
         theme={darkTheme({
-          accentColor: "#7F56D9", // color of wallet
-          accentColorForeground: "white", // color of text
+          // accentColor: "#7F56D9", // color of wallet
+          // accentColorForeground: "white", // color of text
           borderRadius: "large", // rounded edges
           fontStack: "system",
         })}
