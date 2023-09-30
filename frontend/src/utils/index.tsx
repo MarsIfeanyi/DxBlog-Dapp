@@ -1,6 +1,3 @@
-import { ethers, toBigInt } from "ethers";
-import { Abi } from "viem";
-import { Provider } from "ethers";
 import {
   inkContractAddress,
   multiCall2ContractAddress,
@@ -63,7 +60,7 @@ export const formatDate = (time: number) => {
 };
 
 export const calculateGasMargin = (value: bigint): bigint =>
-  (toBigInt(value) * toBigInt(120)) / toBigInt(100);
+  (BigInt(value) * BigInt(120)) / BigInt(100);
 
 export type inkFns =
   | "treasury"
