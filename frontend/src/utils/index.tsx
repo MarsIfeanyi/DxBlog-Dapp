@@ -6,9 +6,9 @@ import inkAbi from "@/constants/ABIs/inkAbi";
 import multiCall2Abi from "@/constants/ABIs/multiCall2Abi";
 
 // @ts-ignore
-const getInterface = (abi) => new ethers.Interface(abi);
+// const getInterface = (abi) => new ethers.Interface(abi);
 
-export const getInkInterface = getInterface(inkAbi);
+// export const getInkInterface = getInterface(inkAbi);
 
 // @ts-ignore
 export const getContract = async (address: string, abi) => {
